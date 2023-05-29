@@ -4,7 +4,21 @@
   <title>Resultado del álbum</title>
 </head>
 <body>
-  <h1><%= album1 %></h1>
-  <h1><%= new_album %></h1>
+  <h1>
+    <ul>
+      <li>Artistas:
+        <ul>
+          <% album1.artistas.forEach((artista) => { %>
+            <li><%= artista %></li>
+          <% }) %>
+        </ul>
+      </li>
+      <li>Cantidad de canciones: <%= album1.cantidadCanciones %></li>
+      <li>Género: <%= album1.genero %></li>
+      <li>Duración: <%= album1.duracion %></li>
+      <li>Fecha de lanzamiento: <%= album1.fechaLanzamiento %></li>
+      <li>Nombre del álbum: <%= album1.nombreAlbum %></li>
+    </ul>
+  </h1>
 </body>
 </html>

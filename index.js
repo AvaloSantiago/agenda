@@ -42,6 +42,14 @@ let new_album = new album({
     nombreAlbum: 'Mi álbum'
 });
 
-new_album.save();
+new_album.save()
 
-res.render('index', {album1: new_album})
+(async () => {
+    try {
+    const deletedAlbum = await Album.deleteOne({ nombreAlbum: 'Mi álbum' });
+    console.log('Álbum eliminado:', deletedAlbum);
+    } catch (err) {
+    console.log(err);
+    }
+})();
+
